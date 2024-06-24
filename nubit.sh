@@ -214,14 +214,18 @@ nkey list --p2p.network nubit-alphatestnet-1 --node.type light
 
 }
 
+function export_mnemonic() {
+
+cat ~/nubit-node/mnemonic.txt
+
+}
+
 # 主菜单
 function main_menu() {
     while true; do
         clear
         echo "脚本以及教程由推特用户大赌哥 @y95277777 编写，免费开源，请勿相信收费"
         echo "============================nubit节点安装===================================="
-        echo "节点社区 Telegram 群组:https://t.me/niuwuriji"
-        echo "节点社区 Telegram 频道:https://t.me/niuwuriji"
         echo "节点社区 Discord 社群:https://discord.gg/GbMV5EcNWF"
         echo "退出脚本，请按键盘ctrl c退出即可"
         echo "请选择要执行的操作:"
@@ -230,7 +234,8 @@ function main_menu() {
         echo "3. 查看当前服务状态"
         echo "4. 查看钱包地址"
         echo "5. 查看pubkey"
-        read -p "请输入选项（1-3）: " OPTION
+        echo "6. 显示钱包助记词"
+        read -p "请输入选项（1-6）: " OPTION
 
         case $OPTION in
         1) install_node ;;
@@ -238,6 +243,7 @@ function main_menu() {
         3) view_logs ;;
         4) check_address ;;
         5) check_pubkey ;;
+        6) export_mnemonic ;;
         *) echo "无效选项。" ;;
         esac
         echo "按任意键返回主菜单..."
