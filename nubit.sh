@@ -210,7 +210,7 @@ function check_address() {
 
 function check_pubkey() {
 
-nkey list --p2p.network nubit-alphatestnet-1 --node.type light
+ $HOME/nubit-node/bin/nkey list --p2p.network nubit-alphatestnet-1 --node.type light
 
 }
 
